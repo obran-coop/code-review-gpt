@@ -21,13 +21,18 @@ runs:
       with:
         node-version: 18
 
+    - name: Install pnpm
+      uses: pnpm/action-setup@v2
+      with:
+        version: 8
+
     - name: Install Code Review GPT
       shell: bash
-      run: npm install code-review-gpt
+      run: pnpm install code-review-gpt
     
     - name: Run Code Review GPT
       shell: bash
-      run: npx code-review-gpt review --ci=github --model=$MODEL
+      run: pnpx code-review-gpt review --ci=github --model=$MODEL
       
       env:
         MODEL: ${{ inputs.MODEL }}
