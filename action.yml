@@ -28,7 +28,7 @@ runs:
 
     - name: Install Code Review GPT
       shell: bash
-      run: pnpm install code-review-gpt
+      run: pnpm install -w code-review-gpt
     
     - name: Run Code Review GPT
       shell: bash
